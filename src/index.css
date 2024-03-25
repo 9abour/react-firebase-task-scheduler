@@ -50,7 +50,7 @@ h6 {
 }
 
 input[type="date"] {
-	@apply text-grey-monsoon;
+	@apply text-grey-monsoon font-normal;
 }
 ::-webkit-calendar-picker-indicator {
 	@apply rounded-[4px] p-[5px] bg-primary-ceruleanBlue cursor-pointer;
@@ -58,22 +58,22 @@ input[type="date"] {
 
 @layer base {
 	table {
-		@apply w-full rounded-md bg-primary-hawkesBlue text-xs md:text-sm lg:text-[16px];
+		@apply w-full rounded-md bg-primary-hawkesBlue text-xs md:text-sm;
 		th {
 			@apply font-medium;
 		}
-		& > tr:not(:last-child) {
-			@apply border-b-2 border-grey-iron;
+		& > tbody tr:not(:last-child) {
+			@apply border-b-[1.5px] border-grey-iron;
 		}
 	}
 
 	tr {
 		& > th {
-			@apply text-start border-grey-iron;
+			@apply !w-max text-start border-grey-iron border-b-[1.5px];
 		}
 
 		& > th:not(:last-child) {
-			@apply border-r-2;
+			@apply border-r-[1.5px];
 		}
 
 		& > th,
@@ -82,7 +82,7 @@ input[type="date"] {
 		}
 
 		& > td:not(:last-child) {
-			@apply border-r-2;
+			@apply border-r-[1.5px];
 		}
 	}
 }

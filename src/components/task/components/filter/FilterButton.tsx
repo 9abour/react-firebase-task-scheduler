@@ -23,6 +23,7 @@ const FilterButton = ({
 
 	useEffect(() => {
 		handleChangeActiveFilterOptions(name, activeOption);
+		console.log({ activeOption });
 	}, [activeOption]);
 
 	return (

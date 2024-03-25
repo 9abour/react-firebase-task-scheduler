@@ -27,7 +27,7 @@ const LandingPage = () => {
 					</div>
 				</div>
 			</div>
-			<div className="mt-7 pt-9 mx-auto rounded-2xl lg:w-4/5">
+			<div className="mx-auto rounded-2xl lg:w-4/5">
 				<img
 					alt="CalendarPlan dashboard with loading elements"
 					loading="lazy"
@@ -36,7 +36,7 @@ const LandingPage = () => {
 					decoding="async"
 					data-nimg="1"
 					className="rounded-2xl mx-auto object-cover h-full"
-					src="https://isotope-startup-webtemplate.netlify.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdnzjbmzag%2Fimage%2Fupload%2Fv1694679379%2FCalendarPlanDashboard.png&w=3840&q=75"
+					src="https://res.cloudinary.com/driq6cudi/image/upload/v1711372120/w0butmbfeg6f5cmtn3sx.png"
 				/>
 			</div>
 		</div>

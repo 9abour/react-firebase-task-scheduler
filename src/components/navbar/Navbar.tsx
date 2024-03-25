@@ -7,7 +7,7 @@ const Navbar = () => {
 	const { user, logout } = useContext(AuthContext);
 
 	return (
-		<nav className={`w-full h-[80px] px-12 flex-jb-c  bg-[#f2f2fe]`}>
+		<nav className={`w-full h-[80px] px-4 md:px-12 flex-jb-c bg-[#f2f2fe]`}>
 			<Logo />
 
 			{user ? (

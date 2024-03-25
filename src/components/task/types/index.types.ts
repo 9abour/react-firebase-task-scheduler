@@ -30,12 +30,20 @@ export type DateFilterInputType = {
 	changeValue: (e: ITarget) => void;
 };
 
+export type FilterOptions = {
+	name: string;
+	options: string[];
+}[];
+
 export type FilterMobPropsType = {
-	filterOptions: {
-		name: string;
-		options: string[];
-	}[];
+	filterOptions: FilterOptions;
 	handleChangeActiveFilterOptions: (key: string, value: string) => void;
 	dateValue: string;
 	handleDateChange: (e: ITarget) => void;
+};
+
+export type UseFilterType = {
+	filterOptions: FilterOptions;
+	activeFilterOptions: Record<string, string>;
+	setActiveFilterOptions: (activeFilterOptions: Record<string, string>) => void;
 };
