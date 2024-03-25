@@ -1,13 +1,22 @@
+import { TaskType } from "../../../rtk/slices/types/task.types";
 import { ITarget } from "../../common/form/hooks/types/index.types";
 
 export type TaskCardType = {
-	id: string;
-	title: string;
-	description: string;
-	priority: string;
-	status: boolean;
-	dueDate: string;
-	addedAt: string;
+	task: {
+		id: string;
+		title: string;
+		description: string;
+		priority: string;
+		status: boolean;
+		dueDate: string;
+		addedAt: string;
+	};
+	handleToggleTask: () => void;
+};
+
+export type TaskListItemPropsType = {
+	task: TaskType;
+	tableView: boolean | null;
 };
 
 export type FilterButtonType = {

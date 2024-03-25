@@ -1,31 +1,13 @@
 import moment from "moment";
-import { useToggleTask } from "../hooks/useToggleTask";
-import useToggle from "../../../hooks/click-handlers/useToggle";
 import { TaskCardType } from "../types/index.types";
 import CheckboxWithLabel from "../../common/selection-inputs/components/CheckboxWithLabel";
 import { Link } from "react-router-dom";
 import { deleteTask } from "../../../rtk/reducers/deleteTask";
 import { useAppDispatch } from "../../../rtk/app/hooks";
-import { toggleUiCompletedTask } from "../../../rtk/slices/taskSlice";
 
-const TaskTableItem = ({
-	id,
-	title,
-	description,
-	priority,
-	status,
-	dueDate,
-	addedAt,
-}: TaskCardType) => {
-	const { currentState, toggle: toggleTaskUi } = useToggle(status);
-	const { toggleTask } = useToggleTask();
+const TaskTableItem = ({ task, handleToggleTask }: TaskCardType) => {
+	const { id, title, description, priority, status, dueDate, addedAt } = task;
 	const dispatch = useAppDispatch();
-
-	const handleToggleTask = () => {
-		toggleTaskUi();
-		toggleTask(id, !status);
-		dispatch(toggleUiCompletedTask(id));
-	};
 
 	return (
 		<tr>
@@ -55,7 +37,7 @@ const TaskTableItem = ({
 			<td>
 				<CheckboxWithLabel
 					label={{ id, name: "Completed" }}
-					checked={currentState}
+					checked={status}
 					bgColor="bg-primary-ceruleanBlue"
 					borderColor="border-grey-ghostWhite"
 					customStyles="rounded-sm text-white"
