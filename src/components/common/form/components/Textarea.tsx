@@ -27,7 +27,7 @@ const Textarea = ({
 			<textarea
 				value={value}
 				onChange={onChange}
-				className={`w-full min-h-[100px] py-2 px-4 text-grey-monsoon bg-primary-hawkesBlue rounded-md border-[1.5px] border-grey-iron hover:border-primary-ceruleanBlue focus:border-primary-ceruleanBlue outline-none transition-all resize-none ${customStyles}`}
+				className={`w-full min-h-[200px] py-2 px-4 text-grey-monsoon bg-primary-hawkesBlue rounded-md border-[1.5px] border-grey-iron hover:border-primary-ceruleanBlue focus:border-primary-ceruleanBlue outline-none transition-all resize-none ${customStyles}`}
 				placeholder={placeholder}
 				disabled={disabled}
 			/>

@@ -83,6 +83,7 @@ const EditTask = () => {
 
 	return (
 		<div className="w-full max-w-[800px] mx-auto mt-12 px-4">
+			<h3 className="text-h3">Edit Task</h3>
 			<form className="grid grid-cols-4 gap-2" onSubmit={handleSubmitEditTask}>
 				{editTaskFormInputData.map(input =>
 					input.type === "textarea" ? (
