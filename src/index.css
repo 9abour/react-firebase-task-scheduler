@@ -158,7 +158,7 @@ input[type="date"] {
 	}
 
 	.navbar__auth__button {
-		@apply w-[60px] sm:w-[80px] md:w-[100px] text-xs sm:text-sm md:text-[16px] flex-jc-c py-2 px-4 font-normal text-primary-lavenderBlue rounded-full border-[1.5px] border-primary-ceruleanBlue hover:shadow-md transition-all;
+		@apply w-[60px] sm:w-[80px] md:w-[100px] text-xs sm:text-sm md:text-[16px] flex-jc-c py-2 px-4 font-normal text-primary-lavenderBlue rounded-full border-[1.5px] border-primary-lavenderBlue hover:shadow-md transition-all;
 	}
 
 	.button {
