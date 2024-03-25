@@ -47,16 +47,13 @@ const Input = ({
 				<div>
 					<EyeButton
 						isShowPassword={currentState}
-						toggle={toggle}
+						toggle={() => toggle()}
 						error={validationError}
 					/>
 				</div>
 			) : null}
 
-			<span
-				className="absolute left-4 top-2/4 -translate-y-2/4 text-grey-monsoon"
-				onClick={() => toggle()}
-			>
+			<span className="absolute left-4 top-2/4 -translate-y-2/4 text-grey-monsoon">
 				{icon}
 			</span>
 
