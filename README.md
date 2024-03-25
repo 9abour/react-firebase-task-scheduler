@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+![alt text](https://res.cloudinary.com/driq6cudi/image/upload/v1711391888/iz10emezzqthpahkzsrk.png)
+# Task Scheduler React + TypeScript + Firebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple task scheduler built using React, allowing users to add, manage, and mark tasks as done. The application includes authentication functionality for user sign-up and sign-in, as well as task persistence using Firebase API for real-time data storage.
 
-Currently, two official plugins are available:
+## Features
+- Authentication: Users can sign up with their name, email, and password, and sign in to access their tasks.
+- Task Management: Users can add tasks with titles, descriptions, priorities, and due dates. They can also edit, mark as done/not done, and delete tasks.
+- Filtering and Sorting: Tasks can be filtered and sorted based on various criteria such as priority, status, and due date.
+- Search: Instant search functionality allows users to filter tasks by title in real-time.
+- User Profile (Bonus): Logged-in users can edit their profile information including first name, last name, email, and password.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pages
+- Landing Page: Provides a brief description of the task scheduler with sign-up and sign-in links.
+- Sign Up: Allows users to register with their information.
+- Sign In: Allows existing users to sign in.
+- Homepage: Displays the task management interface with forms to add tasks, filters, search, and a list of tasks.
+- Edit Task Page: Allows users to edit existing tasks.
+- User Profile (Bonus): Allows users to edit their profile information.
 
-## Expanding the ESLint configuration
+## Technologies Used
+- React with TypeScript: Frontend JavaScript library for building user interfaces with type safety.
+- Redux Toolkit: State management library for predictable state container with TypeScript support.
+- Tailwind CSS: Utility-first CSS framework for designing custom UIs with ease.
+- React Router DOM: Used for declarative routing within the application.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## How to Run
+1. Clone the repository.
+2. Install dependencies with ```npm install```.
+4. Run the application with ```npm run start:dev```.
 
-- Configure the top-level `parserOptions` property like this:
+## [View](https://react-firebase-task-scheduler.vercel.app/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Images
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![alt text](https://res.cloudinary.com/driq6cudi/image/upload/v1711391888/iz10emezzqthpahkzsrk.png)
+![alt text](https://res.cloudinary.com/driq6cudi/image/upload/v1711391884/xv4xqgbtkiwccfkf3gtr.png)
+![alt text](https://res.cloudinary.com/driq6cudi/image/upload/v1711391885/bz2eqlslp9c9bttzzzzv.png)
+![alt text](https://res.cloudinary.com/driq6cudi/image/upload/v1711391885/fk4ss3ihcctdgx8zbbqa.png)
