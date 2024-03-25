@@ -22,7 +22,7 @@ export type CheckboxLabelType = {
 };
 
 export type useGenerateCheckboxStylesType = {
-	checked?: boolean;
+	checked?: boolean | null;
 	bgColor: string;
 	borderColor: string;
 	customStyles?: string;

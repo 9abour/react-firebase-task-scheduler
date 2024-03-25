@@ -1,4 +1,4 @@
-import { useGenerateCheckboxStylesType } from "@/components/common/selection-inputs/types/index.types";
+import { useGenerateCheckboxStylesType } from "../types/index.types";
 
 const useGenerateCheckboxStyles = ({
 	checked,

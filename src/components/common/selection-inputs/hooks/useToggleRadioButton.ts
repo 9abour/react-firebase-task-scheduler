@@ -1,5 +1,5 @@
-import { CheckboxWithLabelType } from "@/components/common/selection-inputs/types/index.types";
 import { useState } from "react";
+import { CheckboxWithLabelType } from "../types/index.types";
 
 const useToggleRadioButton = (
 	checkboxWithLabelArray: CheckboxWithLabelType[]
