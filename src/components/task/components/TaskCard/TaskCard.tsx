@@ -38,7 +38,7 @@ const TaskCard = ({ task, handleToggleTask }: TaskCardType) => {
 					checked={status}
 					bgColor="bg-primary-ceruleanBlue"
 					borderColor="border-grey-ghostWhite"
-					customStyles="rounded-sm text-white"
+					customStyles="rounded-md text-white"
 					toggle={handleToggleTask}
 				/>
 			</div>

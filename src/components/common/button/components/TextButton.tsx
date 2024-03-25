@@ -1,3 +1,4 @@
+import ButtonSpinner from "../../loading/ButtonSpinner";
 import { TextButtonPropsType } from "../types/index.types";
 
 const TextButton = ({
@@ -23,7 +24,7 @@ const TextButton = ({
 			onClick={handleOnClick}
 			disabled={disabled || loading}
 		>
-			{loading ? "Loading..." : text}
+			{loading ? <ButtonSpinner /> : text}
 		</button>
 	);
 };

@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TaskSliceInitialStateType, TaskType } from "./types/task.types";
+import { TaskSliceInitialStateType } from "./types/task.types";
 import { postTask } from "../reducers/postTask";
 import { getUserTasks } from "../reducers/getUserTasks";
 import { deleteTask } from "../reducers/deleteTask";
+import { getFilteredTasks } from "../reducers/getFilteredTasks";
+import { getToggledTasks } from "../reducers/getToggledTasks";
 
 const initialState: TaskSliceInitialStateType = {
 	data: {
@@ -36,26 +38,10 @@ const taskSlice = createSlice({
 
 		filterTasksOptions: (state, action) => {
 			const optionsToFilter = action.payload;
-			const activeOptions = Object.entries(optionsToFilter).filter(
-				([, value]) => value
+			const { filteredTasks, activeOptions } = getFilteredTasks(
+				optionsToFilter,
+				state.data.tasks
 			);
-			let filteredTasks: TaskType[] = [...state.data.tasks];
-
-			activeOptions.forEach(([key, value]) => {
-				if (key === "date") {
-					const ascending = value === "ascending";
-
-					filteredTasks.sort((a, b) =>
-						ascending
-							? Number(new Date(b.dueDate)) - Number(new Date(a.dueDate))
-							: Number(new Date(a.dueDate)) - Number(new Date(b.dueDate))
-					);
-				} else {
-					filteredTasks = filteredTasks.filter(
-						task => String(task[key as keyof TaskType]) === value
-					);
-				}
-			});
 
 			state.data.filteredTasks = filteredTasks;
 			state.data.filter = activeOptions.length > 0;
@@ -64,20 +50,20 @@ const taskSlice = createSlice({
 		toggleUiCompletedTask: (state, action) => {
 			const taskId = action.payload;
 
-			const updated = state.data.tasks.map(task => {
-				if (task.id === taskId) {
-					return {
-						...task,
-						status: !task.status,
-					};
-				} else {
-					return task;
-				}
-			});
+			const toggledTasks = getToggledTasks(state.data.tasks, taskId);
+			const toggledFilteredTasks = getToggledTasks(
+				state.data.filteredTasks,
+				taskId
+			);
 
-			state.data.tasks = updated;
+			state.data = {
+				...state.data,
+				tasks: toggledTasks,
+				filteredTasks: toggledFilteredTasks,
+			};
 		},
 	},
+
 	extraReducers: builder => {
 		builder
 			.addCase(postTask.fulfilled, (state, action) => {
@@ -98,7 +84,11 @@ const taskSlice = createSlice({
 					state.data.isLoading = false;
 				}
 			})
+			.addCase(deleteTask.pending, state => {
+				state.data.isLoading = true;
+			})
 			.addCase(deleteTask.fulfilled, (state, action) => {
+				state.data.isLoading = false;
 				const taskId = action.payload;
 				const filteredTasks = state.data.tasks.filter(
 					task => task.id !== taskId

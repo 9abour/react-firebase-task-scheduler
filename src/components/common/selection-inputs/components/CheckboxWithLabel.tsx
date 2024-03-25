@@ -24,7 +24,7 @@ const CheckboxWithLabel = ({
 		<div className="flex items-center gap-1">
 			<label
 				htmlFor={label.id}
-				className={`text-xs md:text-sm font-semibold cursor-pointer ${
+				className={`text-xs md:text-sm cursor-pointer ${
 					checked
 						? "text-primary-ceruleanBlue line-through"
 						: "text-dark-gunPowder"
@@ -40,7 +40,7 @@ const CheckboxWithLabel = ({
 					checked ? "" : "!border-dark-gunPowder"
 				}  ${styles}`}
 			>
-				{checked ? <FaCheck /> : null}
+				{checked ? <FaCheck size={15} /> : null}
 			</button>
 		</div>
 	);

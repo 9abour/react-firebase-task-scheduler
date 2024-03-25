@@ -2,15 +2,15 @@ import { BsThreeDots } from "react-icons/bs";
 import useToggle from "../../../../hooks/click-handlers/useToggle";
 import { useOnClickOutside } from "../../../../hooks/click-handlers/useOnClickOutside";
 import { Link } from "react-router-dom";
-import { useAppDispatch } from "../../../../rtk/app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../rtk/app/hooks";
 import { deleteTask } from "../../../../rtk/reducers/deleteTask";
+import Spinner from "../../../common/loading/Spinner";
 
 const TaskMenu = ({ taskId }: { taskId: string }) => {
 	const { currentState, toggle } = useToggle(false);
-
 	const ref = useOnClickOutside(toggle);
-
 	const dispatch = useAppDispatch();
+	const { isLoading } = useAppSelector(state => state.task.data);
 
 	return (
 		<>
@@ -39,7 +39,7 @@ const TaskMenu = ({ taskId }: { taskId: string }) => {
 									dispatch(deleteTask(taskId));
 								}}
 							>
-								Delete
+								{isLoading ? <Spinner /> : "Delete"}
 							</button>
 						</li>
 					</ul>

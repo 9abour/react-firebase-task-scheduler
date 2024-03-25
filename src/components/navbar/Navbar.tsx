@@ -2,6 +2,7 @@ import { useContext } from "react";
 import AuthContext from "../../context/authContext";
 import Avatar from "../common/avatar/components/Avatar";
 import Logo from "../common/image/components/Logo";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	const { user, logout } = useContext(AuthContext);
@@ -11,8 +12,7 @@ const Navbar = () => {
 			<Logo />
 
 			{user ? (
-				<ul className="flex gap-4">
-					<Avatar name="M A" href="/profile" />
+				<ul className="flex gap-2">
 					<button
 						type="button"
 						onClick={logout}
@@ -20,18 +20,19 @@ const Navbar = () => {
 					>
 						Logout
 					</button>
+					<Avatar name="M A" href="/profile" />
 				</ul>
 			) : (
 				<ul className="flex gap-4">
 					<li>
-						<a href="login" className="navbar__auth__button">
+						<Link to="login" className="navbar__auth__button">
 							Login
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="register" className="navbar__auth__button">
+						<Link to="register" className="navbar__auth__button">
 							Register
-						</a>
+						</Link>
 					</li>
 				</ul>
 			)}
