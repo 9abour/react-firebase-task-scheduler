@@ -6,9 +6,9 @@ This project is a simple task scheduler built using React, allowing users to add
 ## Features
 - Authentication: Users can sign up with their name, email, and password, and sign in to access their tasks.
 - Task Management: Users can add tasks with titles, descriptions, priorities, and due dates. They can also edit, mark as done/not done, and delete tasks.
-- Filtering and Sorting: Tasks can be filtered and sorted based on various criteria such as priority, status, and due date.
+- Filtering and Sorting: Tasks can be filtered and sorted based on various criteria such as priority, status, ascending, descending, and due date.
 - Search: Instant search functionality allows users to filter tasks by title in real-time.
-- User Profile (Bonus): Logged-in users can edit their profile information including first name, last name, email, and password.
+- User Profile: Logged-in users can edit their profile information including first name, last name, email, and password.
 
 ## Pages
 - Landing Page: Provides a brief description of the task scheduler with sign-up and sign-in links.
@@ -16,7 +16,7 @@ This project is a simple task scheduler built using React, allowing users to add
 - Sign In: Allows existing users to sign in.
 - Homepage: Displays the task management interface with forms to add tasks, filters, search, and a list of tasks.
 - Edit Task Page: Allows users to edit existing tasks.
-- User Profile (Bonus): Allows users to edit their profile information.
+- User Profile: Allows users to edit their profile information.
 
 ## Technologies Used
 - React with TypeScript: Frontend JavaScript library for building user interfaces with type safety.
