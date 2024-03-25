@@ -4,21 +4,34 @@ import Avatar from "../common/avatar/components/Avatar";
 import Logo from "../common/image/components/Logo";
 
 const Navbar = () => {
-	const { user } = useContext(AuthContext);
+	const { user, logout } = useContext(AuthContext);
 
 	return (
-		<nav className="w-full h-[60px] flex-jb-c px-4 bg-white">
+		<nav className={`w-full h-[80px] px-12 flex-jb-c  bg-[#f2f2fe]`}>
 			<Logo />
 
 			{user ? (
-				<Avatar name="M A" href="/profile" />
+				<ul className="flex gap-4">
+					<Avatar name="M A" href="/profile" />
+					<button
+						type="button"
+						onClick={logout}
+						className="font-semibold text-red-500"
+					>
+						Logout
+					</button>
+				</ul>
 			) : (
 				<ul className="flex gap-4">
 					<li>
-						<a href="login">Login</a>
+						<a href="login" className="navbar__auth__button">
+							Login
+						</a>
 					</li>
 					<li>
-						<a href="register">Register</a>
+						<a href="register" className="navbar__auth__button">
+							Register
+						</a>
 					</li>
 				</ul>
 			)}

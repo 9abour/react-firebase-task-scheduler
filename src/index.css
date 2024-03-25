@@ -158,6 +158,10 @@ input[type="date"] {
 		}
 	}
 
+	.navbar__auth__button {
+		@apply w-[100px] flex-jc-c py-2 px-4 font-normal text-primary-lavenderBlue rounded-full border-[1.5px] border-primary-ceruleanBlue hover:shadow-md transition-all;
+	}
+
 	.button {
 		@apply min-w-[45px] min-h-[45px] flex-jc-c bg-primary-hawkesBlue text-grey-monsoon hover:text-primary-ceruleanBlue rounded-md border-[1.5px] border-grey-iron hover:border-primary-ceruleanBlue transition-all;
 	}

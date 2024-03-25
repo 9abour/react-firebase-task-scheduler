@@ -5,11 +5,13 @@ import { UserCredential } from "firebase/auth";
 type AuthContext = {
 	user: null | UserCredential;
 	setUser: (user: UserCredential) => void;
+	logout: () => void;
 };
 
 const initialAuthValue: AuthContext = {
 	user: null,
 	setUser: () => {},
+	logout: () => {},
 };
 
 const AuthContext = createContext(initialAuthValue);
@@ -28,8 +30,13 @@ const AuthProvider = ({ children }: ChildrenType) => {
 		}
 	}, []);
 
+	const logout = () => {
+		setUser(null);
+		localStorage.removeItem("user");
+	};
+
 	return (
-		<AuthContext.Provider value={{ user, setUser }}>
+		<AuthContext.Provider value={{ user, setUser, logout }}>
 			{children}
 		</AuthContext.Provider>
 	);

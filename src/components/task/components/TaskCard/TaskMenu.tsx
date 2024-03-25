@@ -15,7 +15,7 @@ const TaskMenu = ({ taskId }: { taskId: string }) => {
 	return (
 		<>
 			<button
-				className="absolute right-4 bg-dark-gunPowder/20 py-1 px-1 rounded-sm"
+				className="absolute right-2 bg-dark-gunPowder/20 py-1 px-1 rounded-sm"
 				onClick={() => toggle()}
 			>
 				<BsThreeDots size={20} className="text-dark-gunPowder" />
