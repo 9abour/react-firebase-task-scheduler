@@ -105,20 +105,22 @@ const EditTask = () => {
 					)
 				)}
 
-				<Dropdown
-					changePriority={setPriority}
-					active={priority || "medium"}
-					options={prioritiesOptions}
-				/>
+				<div className="w-full flex gap-2">
+					<Dropdown
+						changePriority={setPriority}
+						active={priority || "medium"}
+						options={prioritiesOptions}
+					/>
 
-				<CheckboxWithLabel
-					label={{ id: "completed", name: "Completed" }}
-					checked={status}
-					bgColor="bg-dark-gunPowder"
-					borderColor="border-grey-monsoon"
-					customStyles="rounded-sm"
-					toggle={() => toggleTaskUi()}
-				/>
+					<CheckboxWithLabel
+						label={{ id: taskData.id, name: "Completed" }}
+						checked={status}
+						bgColor="bg-primary-ceruleanBlue"
+						borderColor="border-grey-ghostWhite"
+						customStyles="rounded-md text-white"
+						toggle={() => toggleTaskUi()}
+					/>
+				</div>
 
 				<div className="col-span-4 flex gap-2">
 					<TextButton
