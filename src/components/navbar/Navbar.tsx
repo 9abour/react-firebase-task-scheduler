@@ -5,7 +5,7 @@ import Logo from "../common/image/components/Logo";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-	const { user, logout } = useContext(AuthContext);
+	const { user, userInfo, logout } = useContext(AuthContext);
 
 	return (
 		<nav className={`w-full h-[80px] px-4 md:px-12 flex-jb-c bg-[#f2f2fe]`}>
@@ -20,7 +20,12 @@ const Navbar = () => {
 					>
 						Logout
 					</button>
-					<Avatar name="M A" href="/profile" />
+					{userInfo ? (
+						<Avatar
+							name={`${userInfo?.firstName} ${userInfo?.lastName}`}
+							href="/profile"
+						/>
+					) : null}
 				</ul>
 			) : (
 				<ul className="flex gap-4">
