@@ -16,7 +16,7 @@ const Navbar = () => {
 					<button
 						type="button"
 						onClick={logout}
-						className="font-semibold text-red-500"
+						className="navbar__auth__button"
 					>
 						Logout
 					</button>

@@ -5,8 +5,7 @@
 :root {
 	@apply bg-grey-ghostWhite;
 
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
+	font-family: "Ubuntu", sans-serif;
 	font-weight: 400;
 
 	color-scheme: light dark;
@@ -167,7 +166,7 @@ input[type="date"] {
 	}
 
 	.priority {
-		@apply font-semibold px-2 shadow-md border rounded-sm text-dark-gunmetal;
+		@apply font-medium px-2 shadow-md border rounded-sm text-dark-gunmetal;
 
 		&.low {
 			@apply bg-priority-low border-priority-low;
