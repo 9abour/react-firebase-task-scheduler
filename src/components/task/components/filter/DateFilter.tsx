@@ -8,6 +8,7 @@ const DateFilter = ({ value, changeValue }: DateFilterInputType) => {
 				className="input"
 				value={value}
 				onChange={changeValue}
+    placeholder="Due Date"
 			/>
 		</button>
 	);
