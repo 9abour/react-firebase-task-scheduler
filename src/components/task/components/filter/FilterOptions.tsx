@@ -12,11 +12,17 @@ const FilterOptions = () => {
 	const { value: dateValue, onChange: handleDateChange } = useInput("");
 	const { filterOptions, handleChangeActiveFilterOptions } = useFilter();
 
+	console.log(filterOptions);
+
 	useEffect(() => {
 		if (filtersMob) {
 			hideFilters(false);
 		}
 	}, [isMobile]);
+
+	useEffect(() => {
+		handleChangeActiveFilterOptions("dueDate", dateValue);
+	}, [dateValue]);
 
 	return (
 		<>

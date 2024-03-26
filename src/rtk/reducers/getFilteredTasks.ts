@@ -21,8 +21,8 @@ const getFilteredTasks = (
 
 			filteredTasks.sort((a, b) =>
 				ascending
-					? new Date(b.dueDate) - new Date(a.dueDate)
-					: new Date(a.dueDate)) - new Date(b.dueDate)
+					? Number(new Date(b.dueDate)) - Number(new Date(a.dueDate))
+					: Number(new Date(a.dueDate)) - Number(new Date(b.dueDate))
 			);
 		} else {
 			filteredTasks = filteredTasks.filter(
